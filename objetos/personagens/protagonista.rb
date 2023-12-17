@@ -9,7 +9,9 @@ class Protagonista < Personagem
   end
 
   def subir_nivel
-    return puts "Personagem está no nivel máximo!" if self.nivel == self.obj_nivel.nivel_maximo
+    if self.nivel == self.obj_nivel.nivel_maximo || self.obj_nivel.nivel_maximo <= 0
+      return puts "Personagem está no nivel máximo!" 
+    end
 
     self.nivel += 1
     puts "Subiu para o nivel #{self.nivel}!"
